@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include "main.h"
 
@@ -11,17 +13,18 @@
  */
 int _islower(int c)
 {
-	int n;
+	int n, check;
 
 	n = islower(c);
 
 	if (n > 0)
 	{
-		return (1);
+		check = 1;
 	}
 	else
 	{
-		return (0);
+		check = 0;
 	}
+	return (check);
 
 }
