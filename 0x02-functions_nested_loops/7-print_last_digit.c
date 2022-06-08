@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * print_last_digit - prints absolute integer
+ * print_last_digit - prints every minute of the day
  * @n: an integer
  *
  * Return: value of last digit
@@ -12,8 +12,7 @@
 int print_last_digit(int n)
 {
 	int c = abs(n % 10);
-	
-	putchar('\n');
+
 	putchar(c + '0');
 
 	return (c);
