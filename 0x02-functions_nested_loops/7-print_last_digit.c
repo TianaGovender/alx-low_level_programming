@@ -11,11 +11,12 @@
  */
 int print_last_digit(int n)
 {
-	char ch[10], copy[10];
+	char ch[10], ch2[10];
 	int c = abs(n % 10);
 
 	sprintf(ch, "%d", c);
-	strcat(ch, ch);
+	sprintf(ch2, "%d", c);
+	strcat(ch, ch2);
 	c = atoi(ch);
 
 	return (c);
