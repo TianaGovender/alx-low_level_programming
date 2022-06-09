@@ -21,12 +21,12 @@ void print_line(int n)
 			putchar('_');
 			i++;
 		}
-		putchar('\n');
+		putchar('$');
 	}
 
 	if (n <= 0)
 	{
-		putchar('\n');
+		putchar('$');
 	}
 
 }
