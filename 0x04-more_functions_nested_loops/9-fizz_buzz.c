@@ -13,7 +13,7 @@ int main(void)
 {
 	int i, num1, num2;
 
-	i = 0;
+	i = 1;
 	while (i <= 100)
 	{
 		num1 = i % 3;
