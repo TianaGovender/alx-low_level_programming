@@ -19,7 +19,7 @@ void print_diagonal(int n)
 		while (i < n)
 		{
 			c = 0;
-			while (c <= i)
+			while (c < i)
 			{
 				putchar(32);
 				c++;
