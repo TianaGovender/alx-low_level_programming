@@ -12,23 +12,22 @@
  */
 
 int _isupper(int c)
-{
-	int num, i;
-	char ch;
+{ 
+	int i;
+	/**
+	 * char ch;
+	 * ch = c;
+	 * num = isupper(ch);
+	 */
 
-	ch = c;
-	num = isupper(ch);
-
-	if (num > 0)
+	if (c >= 'A' && c <= 'Z')
 	{
 		i = 1;
 	}
-
-	if (num > 0)
+	else
 	{
 		i = 0;
 	}
 
 	return (i);
-
 }
