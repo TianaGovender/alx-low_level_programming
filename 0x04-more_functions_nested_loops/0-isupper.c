@@ -12,13 +12,8 @@
  */
 
 int _isupper(int c)
-{ 
+{
 	int i;
-	/**
-	 * char ch;
-	 * ch = c;
-	 * num = isupper(ch);
-	 */
 
 	if (c >= 'A' && c <= 'Z')
 	{
