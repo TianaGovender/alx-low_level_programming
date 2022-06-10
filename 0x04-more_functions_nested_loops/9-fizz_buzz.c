@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
 #include "main.h"
-
 /**
  * main - fizz buzz fizzbuzz
  * Return: Always 0 (Success)
@@ -18,22 +15,21 @@ int main(void)
 	{
 		num1 = i % 3;
 		num2 = i % 5;
-
 		if (num1 == 0 && num2 == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else
 		{
 			if (num1 == 0)
 			{
-				printf("Fizz ");
+				printf("Fizz");
 			}
 			else
 			{
 				if (num2 == 0)
 				{
-					printf("Buzz ");
+					printf("Buzz");
 				}
 				else
 				{
@@ -41,9 +37,12 @@ int main(void)
 				}
 			}
 		}
+		if (i < 100)
+		{
+			printf(" ");
+		}
 		i++;
 	}
-
 	putchar('\n');
 
 	return (0);
