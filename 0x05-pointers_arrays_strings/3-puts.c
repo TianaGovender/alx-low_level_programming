@@ -9,6 +9,16 @@
  */
 void _puts(char *str)
 {
-	putchar(*str);
-	fflush(stdout);
+	int l, i;
+
+	l = strlen(str);
+	i = 0;
+
+	while (i < l)
+	{
+		putchar(str[i]);
+		putchar('\n');
+		fflush(stdout);
+		i++;
+	}
 }
