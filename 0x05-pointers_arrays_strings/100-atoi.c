@@ -10,23 +10,9 @@
  */
 int _atoi(char *s)
 {
-	int i, len, c;
+	int i;
 
-	len = strlen(s);
-	c = 0;
+	i = atoi(s);
 
-	while (c < len)
-	{
-		if  (s[c] >= '0' && s[c] <= '9')
-		{
-			i = atoi(s);
-			return (i);
-		}
-		else
-		{
-			return (0);
-		}
-
-		c++;
-	}
+	return (i);
 }
