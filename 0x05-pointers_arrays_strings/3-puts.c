@@ -17,8 +17,8 @@ void _puts(char *str)
 	while (i < l)
 	{
 		putchar(str[i]);
-		putchar('\n');
 		fflush(stdout);
 		i++;
 	}
+	putchar('\n');
 }
