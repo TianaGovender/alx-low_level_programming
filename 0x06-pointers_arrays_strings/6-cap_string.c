@@ -20,6 +20,13 @@ char *cap_string(char *str)
 
 	while (i < len1)
 	{
+		if (i == 0)
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+			{
+				str[i] = toupper(str[i]);
+			}
+		}
 		if (str[i] == ' ')
 		{
 			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
