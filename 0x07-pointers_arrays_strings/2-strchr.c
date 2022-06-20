@@ -17,17 +17,21 @@ char *_strchr(char *s, char c)
 	n = sizeof(*s) / sizeof(s[0]);
 	p = 0;
 
-	while (p <= n)
+	while (p < n)
 	{
 		if (s[p] == c)
 		{
 			i = 1;
 			j = 0;
-			while (j <= n)
+			while (j < n)
 			{
 				s[j] = s[p];
 				p++;
 				j++;
+			}
+			for ( ; j < n; j++)
+			{
+				s[j] = '\0';
 			}
 			p = n;
 		}
