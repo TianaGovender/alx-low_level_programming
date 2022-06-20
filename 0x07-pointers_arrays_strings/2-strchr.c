@@ -11,37 +11,18 @@
  */
 char *_strchr(char *s, char c)
 {
-	int p, n, i, j;
-
-	n = sizeof(*s) / sizeof(s[0]);
-	p = 0;
-	while (p < n)
+	while (*s != '\0')
 	{
-		if (s[p] == c)
+		if (*s == c)
 		{
-			i = 1;
-			for (j = 0; j < n && s[p] != '\0'; j++)
-			{
-				s[j] = s[p];
-				p++;
-			}
-			for ( ; j < n; j++)
-			{
-				s[j] = '\0';
-			}
-			p = n + 1;
+			return (s);
 		}
-		if (p == n)
-		{
-			i = 0;
-		}
-		p++;
+		++s;
 	}
-
-	if (i == 1)
+	if (*s == c)
 	{
 		return (s);
 	}
-	else
-		return (0);
+
+	return (0);
 }
