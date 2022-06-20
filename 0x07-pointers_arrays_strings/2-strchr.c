@@ -17,13 +17,13 @@ char *_strchr(char *s, char c)
 	n = sizeof(*s) / sizeof(s[0]);
 	p = 0;
 
-	while (p < n)
+	while (p <= n)
 	{
 		if (s[p] == c)
 		{
 			i = 1;
 			j = 0;
-			while (j < n)
+			while (j <= n)
 			{
 				s[j] = s[p];
 				p++;
@@ -32,7 +32,7 @@ char *_strchr(char *s, char c)
 			p = n;
 		}
 
-		if (p == (n - 1))
+		if (p == n)
 		{
 			i = 0;
 		}
