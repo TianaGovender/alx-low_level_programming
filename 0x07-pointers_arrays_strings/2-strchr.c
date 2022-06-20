@@ -27,7 +27,11 @@ char *_strchr(char *s, char c)
 				s[j] = s[p];
 				p++;
 			}
-			p = n;
+			for ( ; j < n; j++)
+			{
+				s[j] = '\0';
+			}
+			p = n + 1;
 		}
 		if (p == n)
 		{
