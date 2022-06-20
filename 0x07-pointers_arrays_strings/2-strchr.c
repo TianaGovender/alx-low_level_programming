@@ -12,8 +12,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int p, n, i, j, num;
-	char ss[200];
+	int p, n, i, j;
 
 	n = sizeof(*s) / sizeof(s[0]);
 	p = 0;
@@ -25,7 +24,7 @@ char *_strchr(char *s, char c)
 			i = 1;
 			for (j = 0; j < n && s[p] != '\0'; j++)
 			{
-				ss[j] = s[p];
+				s[j] = s[p];
 				p++;
 			}
 			p = n;
@@ -37,10 +36,6 @@ char *_strchr(char *s, char c)
 		p++;
 	}
 
-	for (num = 0; num < n; num++)
-	{
-		s[num] = ss[num];
-	}
 	if (i == 1)
 	{
 		return (s);
