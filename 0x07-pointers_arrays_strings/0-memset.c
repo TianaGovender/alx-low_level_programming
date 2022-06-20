@@ -18,13 +18,13 @@ char *_memset(char *s, char b, unsigned int n)
 	j = sizeof(*s) / sizeof(s[0]);
 	i = 0;
 
-	while (i < j)
+	while (i <= j)
 	{
 		if (s[i] == *s)
 		{
 			num = n + i + 1;
 			p = i + 1;
-			while (p < num)
+			while (p <= num)
 			{
 				s[p] = b;
 				p++;
