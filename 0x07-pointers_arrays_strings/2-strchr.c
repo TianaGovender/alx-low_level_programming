@@ -9,14 +9,12 @@
  * @c: char
  * Return: pointer of first occurrence or null if not found
  */
-
 char *_strchr(char *s, char c)
 {
 	int p, n, i, j;
 
 	n = sizeof(*s) / sizeof(s[0]);
 	p = 0;
-
 	while (p < n)
 	{
 		if (s[p] == c)
