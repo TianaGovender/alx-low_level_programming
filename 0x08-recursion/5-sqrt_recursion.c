@@ -3,7 +3,7 @@
 #include <string.h>
 #include "main.h"
 
-int a_sqrt_recursion(int n, int j);
+int actual_sqrt_recursion(int n, int i);
 
 /**
  * _sqrt_recursion - prints sqrt of a given number
@@ -18,24 +18,24 @@ int _sqrt_recursion(int n)
 		return (-1);
 	}
 
-	return (a_sqrt_recursion(n, 0));
+	return (actual_sqrt_recursion(n, 0));
 }
 
 /**
- * a_sqrt_recursion - find natural sqrt of num
+ * actual_sqrt_recursion - find natural sqrt of num
  * @n: int
- * @j: int
+ * @i: int
  * Return: int sqrt
  */
 
-int a_sqrt_recursion(int n, int j)
+int actual_sqrt_recursion(int n, int i)
 {
-	if (j * j > n)
+	if (i * i > n)
 	{
 		return (-1);
 	}
-	if (j * j == n)
+	if (i * i == n)
 	{
 	}
-	return (a_sqrt_recursion(n, j + 1));
+	return (actual_sqrt_recursion(n, i + 1));
 }
