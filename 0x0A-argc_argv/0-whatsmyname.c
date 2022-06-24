@@ -10,17 +10,9 @@
  * Return: always 0
  */
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	int last;
-
-	if (argc == 1)
-	{
-		printf("%s", argv[0]);
-	}
-
-	last = argc;
-	printf("%s", argv[last]);
+	printf("%s\n", *argv);
 
 	return (0);
 }
