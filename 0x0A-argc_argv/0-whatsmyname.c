@@ -6,7 +6,7 @@
 /**
  * main - entry point
  * @argc: int
- * @argv: char
+ * @argv: char array
  * Return: always 0
  */
 
@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
-		_putchar(argv[0]);
+		printf("%s", argv[0]);
 	}
 
 	last = argc;
-	_putchar(argv[last]);
+	printf("%s", argv[last]);
 
 	return (0);
 }
