@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "dog.h"
-#define NULL (void *)0
 
 /**
  * init_dog - intializing var
