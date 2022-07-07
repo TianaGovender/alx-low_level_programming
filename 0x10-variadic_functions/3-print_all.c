@@ -14,8 +14,9 @@ void print_all(const char * const format, ...);
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i, n;
+	int i, n, j;
 	char *str;
+	const char tpe[] = "cifs";
 
 	i = 0;
 
@@ -50,8 +51,17 @@ void print_all(const char * const format, ...)
 				printf("%s", str);
 		}
 
-		if (n == 1 && format[i + 1] != '\0')
-			printf(", ");
+		j = 0;
+
+		while (tpe[j] != '\0')
+		{
+			if (n == 1 && format[i] == tpe[j] && format[i + 1] != '\0')
+			{
+				printf(", ");
+				break;
+			}
+			j++;
+		}
 
 		i++;
 	}
