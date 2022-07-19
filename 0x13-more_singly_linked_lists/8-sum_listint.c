@@ -3,18 +3,22 @@
 #include "lists.h"
 
 /**
- * free_listint - fress list
- * @head: a pointer
+ * sum_listint - Calculates the sum of all the
+ *               data (n) of a listint_t list.
+ * @head: A pointer to the head of the listint_t list.
+ *
+ * Return: If the list is empty - 0.
+ *         Otherwise - the sum of all the data.
  */
-
-void free_listint(listint_t *head)
+int sum_listint(listint_t *head)
 {
-	listint_t *temp;
+	int sum = 0;
 
 	while (head)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		sum += head->n;
+		head = head->next;
 	}
+
+	return (sum);
 }
