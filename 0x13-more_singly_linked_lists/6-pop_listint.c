@@ -3,18 +3,26 @@
 #include "lists.h"
 
 /**
- * free_listint - fress list
- * @head: a pointer
+ * pop_listint - Deletes the head node of a listint_t list.
+ * @head: A pointer to the address of the
+ *        head of the listint_t list.
+ *
+ * Return: If the linked list is empty - 0.
+ *         Otherwise - The head node's data (n).
  */
-
-void free_listint(listint_t *head)
+int pop_listint(listint_t **head)
 {
-	listint_t *temp;
+	listint_t *tmp;
+	int ret;
 
-	while (head)
-	{
-		temp = head->next;
-		free(head);
-		head = temp;
-	}
+	if (*head == NULL)
+		return (0);
+
+	tmp = *head;
+	ret = (*head)->n;
+	*head = (*head)->next;
+
+	free(tmp);
+
+	return (ret);
 }
