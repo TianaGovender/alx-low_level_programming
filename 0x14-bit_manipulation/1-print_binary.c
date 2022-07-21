@@ -24,12 +24,12 @@ void binary_p(unsigned long int n)
 {
 	if (n == 0)
 		return;
-	
+
 	binary_p((n >> 1));
-	
+
 	if ((n & 1) == 1)
 		putchar('1');
-	
+
 	if ((n & 1) == 0)
 		putchar('0');
 }
