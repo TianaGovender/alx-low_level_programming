@@ -3,33 +3,23 @@
 #include "main.h"
 
 /**
- * print_binary - prints integers as binary
- * @n: long int
+ * clear_bit - sets the value of a bit to 0 at a given index.
+ * @n: unsigned long int
+ * @index: unsigned int
+ * Return: 1 if it worked, or -1 if an error occurred
  */
 
-void print_binary(unsigned long int n)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (n == 0)
-		putchar('0');
-	else
-		binary_p(n);
-}
+	unsigned long int i;
 
-/**
- * binary_p - prints bin
- * @n: long int
- */
+	i = 1;
+	i = i << index;
+	if (index > sizeof(unsigned long int) * 8 || n == NULL)
+		return (-1);
+	
+	if (((*n >> index) & 1) == 1)
+		*n = i ^ *n;
 
-void binary_p(unsigned long int n)
-{
-	if (n == 0)
-		return;
-
-	binary_p((n >> 1));
-
-	if ((n & 1) == 1)
-		putchar('1');
-
-	if ((n & 1) == 0)
-		putchar('0');
+	return (1);
 }
