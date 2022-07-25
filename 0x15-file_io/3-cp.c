@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include "main.h"
 
 int open_files(char *f_from, char *f_to);
 int read_files(int from_file, int to_file, char *f_from, char *f_to);
