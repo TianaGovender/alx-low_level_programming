@@ -76,8 +76,8 @@ int open_files(char *f_from, char *f_to)
 }
 /**
  * read_files - Reads the file FROM_FILE.
- * @from_fd: File descriptor for FROM_FILE.
- * @to_fd: File descriptor for TO_FILE.
+ * @from_file: File descriptor for FROM_FILE.
+ * @to_file: File descriptor for TO_FILE.
  * @f_from: Name of the file FILE_FROM.
  * @f_to: Name of the file FILE_TO.
  * Return: Always zero. Exit 98.
@@ -114,7 +114,7 @@ int read_files(int from_file, int to_file, char *f_from, char *f_to)
 /**
  * write_to_file - Writes to a file TO_FILE.
  * @buff: An array of characters containing up to 1024 chars.
- * @to_fd: File descriptor of file TO_FILE.
+ * @to_file: File descriptor of file TO_FILE.
  * @read_chars: A number representing how many characters were read and need to
  * be written.
  * @f_to: Name of the file FILE_TO.
