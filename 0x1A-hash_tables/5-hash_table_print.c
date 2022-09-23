@@ -1,24 +1,33 @@
 #include "hash_tables.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 /**
- * hash_djb2 - implements the djb2 algo
- * @str: string
- * Return: hash value
+ * hash_table_print - prints hashtable
+ * @ht: the hash table you want to print
  */
-
-unsigned long int hash_djb2(const unsigned char *str)
+void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int h;
-	int i;
 
-	h = 5381;
-	while ((i = *str++))
+unsigned long int i;
+hash_node_t *node;
+short int comma = 0;
+
+if (ht == NULL)
+	return;
+
+putchar('{');
+for (i = 0; i < ht->size; i++)
+{
+	node = ht->array[i];
+	while (node != NULL)
 	{
-		h = ((h << 5) + h) + i;
-	}
+		if (comma)
+			printf(", ");
 
-	return (h);
+		printf("'%s': '%s'", node->key, node->value);
+		node = node->next;
+
+		if (comma == 0)
+			comma = 1;
+	}
+}
+printf("}\n");
 }
