@@ -1,24 +1,43 @@
 #include "hash_tables.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+/**
+ * hash_table_delete - deletes a hash table
+ * @ht: the hash table you want to delete
+ */
+void hash_table_delete(hash_table_t *ht)
+{
+unsigned long int i;
+hash_node_t *node;
+
+if (ht == NULL)
+	return;
+
+for (i = 0; i < ht->size; i++)
+{
+	node = ht->array[i];
+	free_hash_list(node);
+}
+free(ht->array);
+free(ht);
+}
+
 
 /**
- * hash_djb2 - implements the djb2 algo
- * @str: string
- * Return: hash value
+ * free_hash_list - frees a hash_node_t list
+ * @head: head of linked list
  */
-
-unsigned long int hash_djb2(const unsigned char *str)
+void free_hash_list(hash_node_t *head)
 {
-	unsigned long int h;
-	int i;
+	hash_node_t *current;
+	hash_node_t *next;
 
-	h = 5381;
-	while ((i = *str++))
+	current = head;
+
+	while (current != NULL)
 	{
-		h = ((h << 5) + h) + i;
+		next = current->next;
+		free(current->key);
+		free(current->value);
+		free(current);
+		current = next;
 	}
-
-	return (h);
 }
